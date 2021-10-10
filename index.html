@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<style>
+    html, body {
+        width: 100%;
+        margin: 0;
+    }
+
+    html {
+        height: 100%;
+    }
+
+    body {
+        min-height: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    p {
+        word-break: break-all;
+    }
+
+    @media (max-width: 500px) {
+        h1 {
+            margin-top: 80px;
+        }
+    }
+
+    .flex {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .block {
+        display: block;
+        position: relative;
+    }
+
+    .url {
+        font-size: 18px;
+        padding: 10px 10px 10px 5px;
+        position: relative;
+        width: 300px;
+        border: none;
+        border-bottom: 1px solid #bfbfbf;
+    }
+
+    input:focus {
+        outline: none;
+    }
+
+    .bar {
+        content: '';
+        height: 2px;
+        width: 100%;
+        bottom: 0;
+        position: absolute;
+        background: #000000;
+        transition: 0.2s ease transform;
+        -moz-transition: 0.2s ease transform;
+        -webkit-transition: 0.2s ease transform;
+        transform: scaleX(0);
+    }
+
+    .url:focus ~ .bar {
+        transform: scaleX(1);
+    }
+
+    .btn {
+        line-height: 38px;
+        background-color: #000000;
+        color: #fff;
+        white-space: nowrap;
+        text-align: center;
+        font-size: 14px;
+        border: none;
+        border-radius: 2px;
+        cursor: pointer;
+        padding: 5px;
+        width: 160px;
+        margin: 30px 0;
+    }
+
+    .tips, .example {
+        color: #7b7b7b;
+        position: relative;
+        align-self: flex-start;
+        margin-left: 7.5em;
+    }
+
+    .tips > p:first-child::before {
+        position: absolute;
+        left: -3em;
+        content: 'PS：';
+        color: #7b7b7b
+    }
+
+    .example > p:first-child::before {
+        position: absolute;
+        left: -7.5em;
+        content: '合法输入示例：';
+        color: #7b7b7b
+    }
+</style>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <script>
+        function toSubmit(e) {
+            e.preventDefault()
+            window.open('/' + document.getElementsByName('q')[0].value);
+            return false
+        }
+    </script>
+    <title>GitHub 文件加速</title>
+</head>
+<body class="flex">
+    <a style="position: absolute;top: 0;right: 0;" href="https://github.com/hunshcn/gh-proxy"><img width="149" height="149" referrerPolicy="no-referrer"
+        src="https://inews.gtimg.com/newsapp_ls/0/12025455907/0"
+        alt="Fork me on GitHub"
+        data-recalc-dims="1"></a>
+    <a style="position: absolute;top: 0;left: 0;" href="https://haoduck.com/575.html"><img width="149" height="149" referrerPolicy="no-referrer"
+        src="https://developer-forum-online.cdn.bcebos.com/9f6426cd-7ce6-465d-b7d5-7b366b27cfd9.png"
+        alt="haoduck.com"
+        data-recalc-dims="1"></a>
+<h1 style="margin-bottom: 50px"><img src="https://developer-forum-online.cdn.bcebos.com/b8c45733-4ef8-4384-9812-57ac4831c118.png" style="width: 1.5em;margin-right: .2em;vertical-align: bottom;">GitHub 文件加速<img src="https://developer-forum-online.cdn.bcebos.com/1f89f0a5-917c-4c12-bc66-c8d4a624030a.png" style="width: 1.5em;margin-right: .2em;vertical-align: bottom;"></h1>
+<form action="./" method="get" style="padding-bottom: 40px" target="_blank" class="flex" onsubmit="toSubmit(event)">
+    <label class="block" style="width: fit-content">
+        <input class="block url" name="q" type="text" placeholder="键入Github文件链接"
+               pattern="^((https|http):\/\/)?(github\.com\/.+?\/.+?\/(?:releases|archive|blob)|(raw\.githubusercontent\.com))\/.+$" required>
+        <div class="bar"></div>
+    </label>
+    <input class="block btn" type="submit" value="下载">
+    <div class="tips">
+
+    </div>
+    <div class="example">
+        
+    </div>
+</form>
+<div id="footer">
+    <a href="https://haoduck.com/575.html"><font color="black">使用和部署教程</font></a>
+    ——
+    <a href="https://github.com/hunshcn/gh-proxy"><font color="black">GitHub项目地址</font></a>
+</div>
+</body>
+</html>
